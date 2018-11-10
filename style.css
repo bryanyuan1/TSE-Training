@@ -1,0 +1,53 @@
+.test{
+    background-color: red;
+}
+.logo-pic{
+    width: 18px;
+    height: auto;
+    vertical-align: center;
+}
+
+.bag-pic{
+    margin-right: -10px;
+    height: 60px;
+}
+
+.search-pic{
+    margin-top: -15px;
+    height: auto;
+}
+
+.main{
+    width: 1000px;
+}
+
+.navbar-nav{
+    line-height: 20px;
+}
+.nav-list{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 93%;
+}
+@media only screen and (max-width:1000px){
+    .main{
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width:766px){
+    .main{
+        width: 100%;
+    }
+    .logo{
+        position:absolute;
+        left: 45%;
+        padding-left: 9px;
+    }
+
+    .nav-list{
+        display: block;
+        width: 100%;
+    }
+}
