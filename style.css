@@ -66,7 +66,7 @@ a:hover{
 
 #subtitle{
     width: 100%;
-    height: 48px;
+    height: 56px;
     padding: 10px 20px;
     box-sizing: border-box; /*border-box means it takes margin and border and padding into calculation of width and height*/
     font-size: 15px;
@@ -138,6 +138,29 @@ a:hover{
     margin: 40px auto;
 }
 
+.left{
+    display: inline-block;
+    float: left;
+    width: 25%;
+    margin-top: 40px;
+}
+.half-left{
+    float: left;
+    display: inline-block;
+    width: 47%;
+    margin-top: 0;
+}
+.half-right{
+    float: right;
+    display: inline-block;
+    width: 47%;
+    margin-top: 0;
+}
+.right{
+    display: inline-block;
+    width: 70%;
+    margin-top: 40px;
+}
 #big-bags{
     width: 100%;
 }
@@ -160,6 +183,55 @@ a:hover{
     display: none;
 }
 
+.mac-title-big{
+    display: inline-block;
+}
+
+#price{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    padding: 0;
+}
+#price li{
+    display: inline-block;
+    margin-right: 80%;
+}
+#sizes{
+    list-style-type: initial;
+}
+
+#features{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 80px;
+}
+
+#features li{
+    list-style-type: initial;
+}
+
+#env{
+    margin-top:0;
+    padding: 30px 50px;
+    background: rgb(242, 255, 221);
+    border-radius: 5px;
+}
+
+#env-list{
+    list-style-type: initial;
+    padding-left: 20px;
+}
+
+#env-list li{
+    margin-bottom: 10px;
+}
+
+#env-left{
+    width: 30%;
+}
 @media only screen and (max-width:1000px){
     .line{
         width: 100%;
@@ -182,6 +254,10 @@ a:hover{
 
     .main{
         width: 700px;
+    }
+
+    #features{
+        height: 120px;
     }
 }
 
@@ -241,6 +317,14 @@ a:hover{
         width: 93%;
     }
 
+    .left{
+        margin-top: 15px;
+    }
+
+    .right{
+        margin-top: 15px;
+    }
+
     .main h4{
         font-size: 18px;
     }
@@ -260,6 +344,33 @@ a:hover{
     }
     .mac-title-small{
         display:block;
+    }
+
+    .mac-title-big{
+        display: none;
+    }
+
+    #price{
+        display: block;
+    }
+    .right{
+        width: 100%;
+    }
+    .half-left{
+        width: 100%;
+    }
+    .half-right{
+        width: 100%;
+    }
+    #features{
+        height: 193px;
+    }
+    #env-left{
+        width: 100%;
+    }
+    #env-container{
+        padding-left:0;
+        padding-right:0;
     }
 }
 
