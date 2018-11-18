@@ -3,38 +3,128 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>MacBook</title>
+    <title>MacBook - Technical Specifications - Apple</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="./style.css" rel="stylesheet" type="text/css">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-inverse">
-            <div class="container-fluid main">
-                <button type="button" class="navbar-toggle pull-left" data-toggle="collapse" data-target="#myNavbar">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>                        
-                </button>
-                <a href="#"><img class="navbar-brand bag-pic pull-right" src="images/bag.png" alt="bag"></a>
-                <a class="navbar-brand logo" href="./index.html"><img src="images/logo.png" class="logo-pic"></a>
-                <div class="collapse navbar-collapse" id="myNavbar">
-                    <ul class="nav navbar-nav nav-list">
-                        <li><a href="#">Mac</a></li>              
-                        <li><a href="#">iPad</a></li>
-                        <li><a href="#">iPhone</a></li>
-                        <li><a href="#">Watch</a></li>
-                        <li><a href="#">TV</a></li>
-                        <li><a href="#">Music</a></li>
-                        <li><a href="#">Support</a></li>
-                        <li><a href="#"><img class="navbar-brand search-pic" src="images/search.png" alt="search"></a></li>
-                    </ul>
-                </div>
+    <nav>
+        <div id="pcnav">
+            <ul class="ul2">
+                <img src="images/logo.png" alt="logo" id="logo">
+                <li class="links"><a href="#" class="text-light">Mac</a></li>              
+                <li class="links"><a href="#" class="text-light">iPad</a></li>
+                <li class="links"><a href="#" class="text-light">iPhone</a></li>
+                <li class="links"><a href="#"class="text-light">Watch</a></li>
+                <li class="links"><a href="#"class="text-light">TV</a></li>
+                <li class="links"><a href="#"class="text-light">Music</a></li>
+                <li class="links"><a href="#"class="text-light">Support</a></li>
+                <li class="search-top"><input type="search" class="search-top-input" placeholder="Search apple.com"></li>
+                <li><img src="images/search.png" alt="search" id="search" class="search-btn"></li>
+                <li class="links" ><img src="images/bag.png" alt="bag" id="bag"></li>
+            </ul>
+        </div>
+
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $(".search-btn").click(function(){
+                    $(".links").toggleClass("inactive");
+                    $(".search-top").toggleClass("active");
+                });
+            })
+        </script>
+        <div class="toggle">
+            <i class="fa fa-bars menu"></i>
+            <img src="images/logo.png" alt="logo" id="logo">
+            <img src="images/bag.png" alt="bag" id="bag">
+        </div>
+        <ul class="ul1">
+            <li><input class="search-box" type="search" placeholder="Search apple.com"></li>
+            <li><a href="#"class="text-light">Mac</a></li>           
+            <li><a href="#"class="text-light">iPad</a></li>
+            <li><a href="#"class="text-light">iPhone</a></li>
+            <li><a href="#"class="text-light">Watch</a></li>
+            <li><a href="#"class="text-light">TV</a></li>
+            <li><a href="#"class="text-light">Music</a></li>
+            <li><a href="#"class="text-light">Support</a></li>
+        </ul>
+
+        <div id="subtitle">
+            <ul id="subtitle-list">
+                <li style="font-size: 20px;" id="small">MacBook</li>
+                <li class="down-button"><i class="fa fa-chevron-down"></i></li>
+                <script type="text/javascript">
+                    $(document).ready(function(){
+                        $(".down-button").click(function(){
+                            $(".subtitle-expand").toggleClass("active");                            
+                        })
+                    })
+                </script>
+                <ul id="nested">
+                    <li class="nest-item">Overview</li>
+                    <li class="nest-item">MacOS</li>
+                    <li class="nest-item">Tech Specs</li>
+                    <li><button type="button">Buy</button></li>
+                </ul>
+            </ul>
+            <div class="subtitle-expand test">
+                <p>Overview</p>
+                <hr>
+                <p>Mac OS</p>
+                <hr>
+                <p>Tech Specs</p>
             </div>
-        </nav>
-    </header>
+            <hr class="line" id="tech-down">
+        </div>
+        <script type="text/javascript">
+            window.onscroll = function() {myFunction()};
+
+            // Get the navbar
+            var navbar = document.getElementById("subtitle");
+
+            // Get the offset position of the navbar
+            var sticky = navbar.offsetTop;
+
+            // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+            function myFunction() {
+                if (window.pageYOffset >= sticky) {
+                    navbar.classList.add("sticky")
+                } else {
+                    navbar.classList.remove("sticky");
+                }
+            }
+        </script>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(".menu").click(function(){
+                $(".ul1").toggleClass("active");
+            
+                if ($(".menu").hasClass("fa-bars")){
+                    $(".menu").removeClass("fa-bars");
+                    $(".menu").addClass("fa-times");
+                } else {
+                    $(".menu").removeClass("fa-times");
+                    $(".menu").addClass("fa-bars");
+                }
+            })
+        })
+    </script>
+    <div class="container-fluid">
+        <div class="main">
+            <div><h4>Finish</h4></div>
+            <img src="images/big-finish.png" alt="big bags" id="big-bags">
+            <img src="images/small-finish.png" alt="small bags" id="small-bags">
+            <ul id="mac-title">
+                <li>Gold</li>
+                <li>Space Gray</li>
+                <li>Silver</li>
+            </ul>
+            <div style="text-align: center" class="mac-title-small">Gold, Space Gray, Silver</div>
+        </div>
+    </div>
 </body>
 </html>

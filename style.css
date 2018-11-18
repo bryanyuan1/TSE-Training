@@ -1,53 +1,265 @@
 .test{
     background-color: red;
 }
-.logo-pic{
-    width: 18px;
-    height: auto;
-    vertical-align: center;
+
+nav{
+    width: 100%;
 }
 
-.bag-pic{
-    margin-right: -10px;
-    height: 60px;
+.sticky{
+    position: fixed;
+    top: 0;
+    background-color: #fff;
 }
 
-.search-pic{
-    margin-top: -15px;
-    height: auto;
+ul{
+    list-style-type: none;
 }
 
-.main{
-    width: 1000px;
+.search-top{
+    width: 60%;
+    display: none;
+}
+.search-top-input{
+    width:100%;
+    background:transparent;
+}
+a{
+    text-decoration: none;
 }
 
-.navbar-nav{
-    line-height: 20px;
+a:hover{
+    color: grey;
 }
-.nav-list{
+.active{
+    display: block;
+}
+.inactive{
+    display: none;
+}
+
+.ul1{ /*this is the other list for small screen, have a search space as the first element*/
+    display: none;
+}
+.ul2{ /*this is the original list for big screen, does not have search space*/
+    display: inline-block;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 93%;
+    align-items: center;
+    width: 1000px;
+    margin: 0 auto;
+    padding: 0;
+    font-size: 15px;
 }
+
+.toggle{
+    width: 100%;
+    padding: 10px 20px;
+    box-sizing: border-box; /*border-box means it takes margin and border and padding into calculation of width and height*/
+    color: #fff;
+    font-size: 20px;
+    background:#131313;
+    display: none; /*this means that it initially does not display because the screen is wide, and it displays when the screen becomes smaller*/
+
+}
+
+#subtitle{
+    width: 100%;
+    height: 48px;
+    padding: 10px 20px;
+    box-sizing: border-box; /*border-box means it takes margin and border and padding into calculation of width and height*/
+    font-size: 15px;
+}
+#subtitle-list{
+    display: inline-block;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 1000px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+#nested{
+    display: inline-block;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 5px;
+}
+
+.nest-item{
+    font-size:13px;
+    margin-right: 30px;
+}
+
+.subtitle-expand{
+    width: 100%;
+    padding: 10px 40px;
+    box-sizing: border-box; /*border-box means it takes margin and border and padding into calculation of width and height*/
+    font-size: 15px;
+    background:#fff;
+    display: none;
+}
+#pcnav{
+    width: 100%;
+    padding: 10px 20px;
+    box-sizing: border-box; /*border-box means it takes margin and border and padding into calculation of width and height*/
+    color: #fff;
+    font-size: 20px;
+    background: #131313;
+}
+#logo,#bag,#search{
+    width:20px;
+    display: inline-block;
+}
+
+.line{
+    width: 1000px;
+}
+
+.down-button{
+    display: none;
+}
+
+.container-fluid{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.main{
+    display: block;
+    width: 1000px;
+    margin: 40px auto;
+}
+
+#big-bags{
+    width: 100%;
+}
+
+#small-bags{
+    display: none;
+}
+
+#mac-title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#mac-title li{
+    display: inline-block;
+}
+
+.mac-title-small{
+    display: none;
+}
+
 @media only screen and (max-width:1000px){
-    .main{
+    .line{
         width: 100%;
+    }
+    #small{
+        font-size: 18px;
+    }
+    #subtitle-list{
+        width: 100%;
+    }
+    .ul2{
+        width: 100%;
+    }
+    .active{
+        display: block;
+    }
+    .inactive{
+        display: none;
+    }
+
+    .main{
+        width: 700px;
     }
 }
 
 @media only screen and (max-width:766px){
-    .main{
-        width: 100%;
+    .down-button{
+        display: block;
+        box-sizing: border-box;
     }
-    .logo{
-        position:absolute;
-        left: 45%;
-        padding-left: 9px;
+    .nest-item{
+        display: none;
+    }
+    
+    .toggle{
+        display: block;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
     }
 
-    .nav-list{
-        display: block;
+    #tech-down{
+        margin-top: 8px;
+    }
+
+    .search-box{
         width: 100%;
     }
+    .active{
+        display: block;
+    }
+
+    .ul1{
+        height: 100%;
+        background: #131313;
+        margin: 0 auto;
+    }
+
+    .ul1 li{
+        box-sizing: border-box;
+        display: block;
+        width: 75%;
+        margin-left: 6%;
+        list-style: none;
+        display: inline-block;
+    }
+
+
+    #pcnav{
+        display: none;
+    } 
+
+    .subtitle-expand{
+        background: #fff;
+    }
+
+    .main{
+        width: 93%;
+    }
+
+    .main h4{
+        font-size: 18px;
+    }
+
+    #big-bags{
+        display: none;
+    }
+    #small-bags{
+        display: block;
+        width: 270px;
+        margin-top: 20px;
+        margin-left: auto;
+	    margin-right: auto;
+    }
+    #mac-title{
+        display:none;
+    }
+    .mac-title-small{
+        display:block;
+    }
 }
+
